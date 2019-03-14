@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation-delay</title>
+
+    <style>
+            /* animation-delay 浏览器支持 
+                animation-delay           支持最低版本  edge; ie: 10; firefox: 16; safari: 9; chrome: 43; opera: 12.1;
+                -webkit-animation-delay   支持最低版本  safari: 5; chrome;
+                -moz-animation-delay      支持最低版本  firefox: 9;
+                -o-animation-delay        支持最低版本  opera: 12;
+            */
+    
+            /* animation-delay 语法
+                animation-delay: time; 
+    
+                time 动画开始延迟时间，单位s\ms,默认0
+                注：允许负值，-2s 使动画马上开始，直接进入执行2s的状态。
+             */
+    
+    
+            div {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background: red;
+                animation: moveDown 5s ease;
+                animation-delay: 2s;
+                -webkit-animation-delay: 2s;
+                -o-animation-delay: 2s;
+                -moz-animation-delay: 2s;
+
+            }
+    
+            @keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+    
+            /* Firefox 浏览器支持 */
+            @-moz-keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+    
+            /* Chrome、Safari 浏览器支持 */
+            @-webkit-keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+    
+            /* Opera 浏览器支持 */
+            @-o-keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+        </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation-timing-function</title>
+    <style>
+            /* animation-timing-function 浏览器支持 
+                animation-timing-function           支持最低版本  edge; ie: 10; firefox: 16; safari: 9; chrome: 43; opera: 12.1;
+                -webkit-animation-timing-function   支持最低版本  safari: 5; chrome;
+                -moz-animation-timing-function      支持最低版本  firefox: 9;
+                -o-animation-timing-function        支持最低版本  opera: 12;
+            */
+    
+            /* animation-timing-function 语法
+                animation-timing-function: value; 默认ease
+    
+                linear	                动画从头到尾的速度是相同的。	
+                ease	                默认。动画以低速开始，然后加快，在结束前变慢。	
+                ease-in	                动画以低速开始。	
+                ease-out	            动画以低速结束。	
+                ease-in-out	            动画以低速开始和结束。	
+                cubic-bezier(n,n,n,n)	cubic-bezier 三次贝塞尔函数，生成速度曲线。n取值范围0-1。
+             */
+    
+    
+            div {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background: red;
+                animation: moveDown 3s;
+                animation-timing-function: ease;
+                -webkit-animation-timing-function: ease;
+                -o-animation-timing-function: ease;
+                -moz-animation-timing-function: ease;
+            }
+    
+            @keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+    
+            /* Firefox 浏览器支持 */
+            @-moz-keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+    
+            /* Chrome、Safari 浏览器支持 */
+            @-webkit-keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+    
+            /* Opera 浏览器支持 */
+            @-o-keyframes moveDown {
+                0% {
+                    top: 0px;
+                }
+                100% {
+                    top: 200px;
+                }
+            }
+        </style>
+</head>
+<body>
+
+    <div></div>
+    
+</body>
+</html>

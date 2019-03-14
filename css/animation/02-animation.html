@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation</title>
+
+    <style>
+        /* animation 浏览器支持 css3
+            animation          支持最低版本  edge; ie: 10; firefox: 16; safari: 9; chrome: 43; opera: 12.1;
+            -webkit-animation  支持最低版本  safari: 5; chrome;
+            -moz-animation     支持最低版本  firefox: 9;
+            -o-animation       支持最低版本  opera: 12;
+        */
+
+        /* animation 语法 
+            animation: name duration timing-function delay iteration-count direction;
+            
+            name               keyframe的名称        详见03-animation-name.html
+            duration           完成动画时间，单位s、ms  详见04-animation-duration.html
+            timing-function    动画的速度曲线          详见05-animation-timing-function.html
+            delay              动画开始之前的延迟       详见06-animation-delay.html
+            interation-count   动画播放次数            详见07-animation-interaton-count.html
+            direction          是否轮流反方向动画       详见08-animation-direction.html
+        */
+
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation: moveDown 5s linear 3s 4 alternate both;
+            -webkit-animation: moveDown 5s linear 3s 4 alternate both;
+            -moz-animation: moveDown 5s linear 3s 4 alternate both;
+            -o-animation: moveDown 5s linear 3s 4 alternate both;
+        }
+
+        @keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+
+        /* Firefox 浏览器支持 */
+        @-moz-keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+
+        /* Chrome、Safari 浏览器支持 */
+        @-webkit-keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+
+        /* Opera 浏览器支持 */
+        @-o-keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div></div>
+    
+</body>
+</html>

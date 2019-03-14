@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>keyframes</title>
+    <style>
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation: moveDown 5s infinite;
+            -webkit-animation: moveDown 5s infinite;  /* chrome safari */
+            -o-animation: moveDown 5s infinite;       /* oprea */
+            -moz-animation: moveDown 5s infinite;     /* firefox */
+        }
+
+        
+        /* 浏览器支持 
+            浏览器不支持 @keyframes
+            Firefox         支持  @-moz-keyframes 
+            Opera           支持  @-o-keyframes
+            Chrome、Safari  支持  @-webkit-@keyframes
+        */
+        /* 语法
+            @keyframes animationname {keyframes-selector {css-styles;}} 
+            
+            animationname       动画名称
+            keyframes-selector  动画时长的百分比 from（等同0%） to（等同100%） 为获取最佳浏览器支持，保持使用百分比
+            css-styles          css样式属性
+        */
+
+        @keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+
+        /* Firefox 浏览器支持 */
+        @-moz-keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+
+        /* Chrome、Safari 浏览器支持 */
+        @-webkit-keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+
+        /* Opera 浏览器支持 */
+        @-o-keyframes moveDown {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div></div>
+
+</body>
+
+</html>

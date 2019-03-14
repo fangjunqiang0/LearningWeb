@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation-interation-count</title>
+
+    <style>
+        /* animation-interation-count 浏览器支持 
+            animation-interation-count           支持最低版本  edge; ie: 10; firefox: 16; safari: 9; chrome: 43; opera: 12.1;
+            -webkit-animation-interation-count   支持最低版本  safari: 5; chrome;
+            -moz-animation-interation-count      支持最低版本  firefox: 9;
+            -o-animation-interation-count        支持最低版本  opera: 12;
+        */
+
+        /* animation-interation-count 语法
+            animation-iteration-count: n|infinite;
+
+            keyframeinteration-count  选择器keyframes的名称
+            none          无动画（可用于覆盖来自级联的动画）
+         */
+
+
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation-interation-count: moveDown;
+            -webkit-animation-interation-count: moveDown;
+            -o-animation-interation-count: moveDown;
+            -moz-animation-interation-count: moveDown;
+            animation-duration: 5s;
+        }
+
+        @keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Firefox 浏览器支持 */
+        @-moz-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Chrome、Safari 浏览器支持 */
+        @-webkit-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Opera 浏览器支持 */
+        @-o-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

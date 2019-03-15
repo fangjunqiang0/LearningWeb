@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation-play-state</title>
+
+
+
+    <style>
+        /* animation-play-state 浏览器支持 
+            animation-play-state           支持最低版本  edge; ie: 10; firefox: 16; safari: 9; chrome: 43; opera: 12.1;
+            -webkit-animation-play-state   支持最低版本  safari: 5; chrome;
+            -moz-animation-play-state      支持最低版本  firefox: 9;
+            -o-animation-play-state        支持最低版本  opera: 12;
+        */
+
+        /* animation-play-state 语法
+            animation-play-state: paused|running;   js中使用此属性
+
+            paused	规定动画已暂停。	测试
+            running	规定动画正在播放。
+         */
+
+
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation: moveDown 5s linear alternate;
+        }
+        
+        button {
+            position: relative;
+            left: 120px;
+        }
+
+
+        @keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Firefox 浏览器支持 */
+        @-moz-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Chrome、Safari 浏览器支持 */
+        @-webkit-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Opera 浏览器支持 */
+        @-o-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button  onclick="paused()">paused</button>
+    <button  onclick="run()">run</button>
+
+    <script>
+
+        function paused() {
+            var div = document.getElementsByTagName('div')[0]
+            console.log(div)
+            div.style.animationPlayState="paused"
+        }
+
+        function run() {
+            var div = document.getElementsByTagName('div')[0]
+            div.style.animationPlayState="running"
+        }
+    
+    </script>
+</body>
+</html>

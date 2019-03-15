@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation-fill-mode</title>
+
+    <style>
+        /* animation-fill-mode 浏览器支持 
+            animation-fill-mode           支持最低版本  edge; ie: 10; firefox: 16; safari: 9; chrome: 43; opera: 12.1;
+            -webkit-animation-fill-mode   支持最低版本  safari: 5; chrome;
+            -moz-animation-fill-mode      支持最低版本  firefox: 9;
+            -o-animation-fill-mode        支持最低版本  opera: 12;
+        */
+
+        /* animation-fill-mode 语法 属性规定动画在播放之前或之后，其动画效果是否可见。
+            animation-fill-mode : none | forwards | backwards | both;
+
+            none	    不改变默认行为。
+            forwards	当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+            backwards	在 animation-delay 所指定的一段时间内，在动画显示之前，应用开始属性值（在第一个关键帧中定义）。
+            both	    向前和向后填充模式都被应用。
+         */
+
+
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation: moveDown 5s;
+            animation-fill-mode: forwards;
+            -webkit-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+        }
+
+        @keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Firefox 浏览器支持 */
+        @-moz-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Chrome、Safari 浏览器支持 */
+        @-webkit-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Opera 浏览器支持 */
+        @-o-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

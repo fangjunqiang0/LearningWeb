@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>animation-direction</title>
+
+    <style>
+        /* animation-direction 浏览器支持 
+            animation-direction           支持最低版本  edge; ie: 10; firefox: 16; safari: 9; chrome: 43; opera: 12.1;
+            -webkit-animation-direction   支持最低版本  safari: 5; chrome;
+            -moz-animation-direction      支持最低版本  firefox: 9;
+            -o-animation-direction        支持最低版本  opera: 12;
+        */
+
+        /* animation-direction 语法
+            animation-direction: normal|alternate; 
+            注释：如果把动画设置为只播放一次，则该属性没有效果。 
+            animation-direction 值是 "alternate" 动画会在奇数次数（1、3、5 等等）正常播放，而在偶数次数（2、4、6 等等）向后播放。
+
+            normal	    默认值。动画应该正常播放。
+            alternate	动画应该轮流反向播放。
+         */
+
+
+        div {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation: moveDown 5s linear infinite;
+            animation-direction: alternate;
+            -webkit-animation-direction: alternate;
+            -o-animation-direction: alternate;
+            -moz-animation-direction: alternate;
+        }
+
+        @keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Firefox 浏览器支持 */
+        @-moz-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Chrome、Safari 浏览器支持 */
+        @-webkit-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+
+        /* Opera 浏览器支持 */
+        @-o-keyframes moveDown {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

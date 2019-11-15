@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>border学习</title>
+
+    <style>
+        div {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            margin: 200px auto;
+            background-color: red;
+            border: blue;
+
+            /* 设置圆角 */
+            /* border-radius: 30px; */
+
+            /* 设定4个边框的样式
+            1. none 定义无边框
+            2. hidden 与"none"相同。不过应用于表时除外，对于表，hidden用于解决边框冲突。
+            3. dotted 定义点状边框，在大多数浏览器中呈现为实线
+            4. dashed 定义虚线，在大多数浏览器中呈现为虚线
+            5. solid 定义实线
+            6. double 定义双线，双线的宽度等于border-width的值
+            7. groove 定义3D凹槽边框，其效果取决于border-color的值。
+            8. ridge 定义3D垄状边框，其效果取决于border-color的值。
+            9. inset 定义3D inset边框，其效果取决于border-color的值
+            10.outset 定义outset边框，其效果取决于border-color的值。
+             */
+            border-style: solid;
+
+            /* 定义边框4边的宽度
+            1. thin 定义细的边框
+            2. medium 定义中等的边框
+            3. thick 定义粗的边框 
+            */
+            border-width: 20px;
+
+            /* 轮廓是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用 
+             轮廓不会占据空间，也不一定是矩形 
+             可以设置 outline-width,outline-style,outline-color属性
+             设置border-radius不会对outline产生影响
+             */
+            /* outline: yellow solid thick; */
+
+
+            /* 将图片规定为包围div元素的边框 */ 
+            border-image: url(../background/head1.jpg) 30 round;
+
+            /* 图片的路径 */
+            /* border-image-source: url(../background/head2.jpg); */
+
+            /* 规定图像边框的向内偏移 */
+            /* border-image-slice: 0; */
+
+            /* 规定边框图像超过边框盒的量 
+            length 
+            number  代表对应的border-width的倍数
+            */
+            /* border-image-outset: 0; */
+
+            /* 规定图像边框是否应该被重复(repeat)、拉伸(stretched)或铺满(round) 
+            stretch: 拉伸图像来填充区域
+            repeat: 平铺(重复)图像来填充区域
+            round:类似repeat的值，如果无法完整的平铺所有图像，则对图像缩放以适应区域
+            */
+            /* border-image-repeat: repeat; */
+
+            /* 规定图片宽的宽度 */
+            /* border-image-width: 30px; */
+
+            /* 给框添加一个或者多个阴影
+            h-shadow: 必需。水平阴影的位置，允许为负值
+            v-shadow: 必需。垂直阴影的位置，允许为负值
+            blur: 可选。模糊距离
+            spread: 可选。阴影的尺寸
+            color: 可选。阴影的颜色
+            inset: 可选。将外部阴影改为内部阴影
+             */
+             /* box-shadow: 0px 0px 50px 0px #888888 */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

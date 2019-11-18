@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>color</title>
+
+    <style>
+    div {
+
+        position: relative;
+        width: 100px;
+        height: 100px;
+
+        background-color: brown;
+
+        margin: 200px auto;
+        /* background-color: rgba(2, 121, 143, 0.4); */
+
+        /* 设置元素的不透明级别 */
+        opacity: 0;
+
+        /* rgba 和 opacity的区别: 
+        opacity 会影响子元素，并且子元素的opacity比opacity比父元素的值大不生效，子元素的值比父元素的值小会生效
+        rgba 不会影响子元素
+        */
+    }
+    p {
+        background-color: seagreen;
+        opacity: 1;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <p>rgba和opacity的区别</p>
+    </div>
+</body>
+</html>

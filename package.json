@@ -1,0 +1,26 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "b",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fangjunqiang0/LearningWeb.git"
+  },
+  "author": "anchunliang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fangjunqiang0/LearningWeb/issues"
+  },
+  "homepage": "https://github.com/fangjunqiang0/LearningWeb#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "three": "^0.110.0"
+  }
+}

@@ -22,23 +22,65 @@
 
         .webKit {
 
+
             /* float:left; */
-            /* position: relative; */
+            position: relative;
             /* position:absolute; */
             background-color: chartreuse;
-            width: 20%;
-            height: 20%;
             border: 1px solid blue;
+            height: 100px;
+            width: 100px;
+            /* line-height: 100px; */
+
+            /* margin-top: 100px; */
+
+            /* 定义属性元素往哪个方向浮动
+            left: 元素向左浮动
+            right: 元素向右浮动 
+             */
+            /* float: left; */
+
+            /* 行内元素：再水平方向上排列，宽度岁内容的宽度而定。不可以设置宽高，可以设置行高。设置margin和padding的上下无用。
+            常见的内联元素有:a,b,br,em,font,i,img,input,label,select,small,span,strike(中划线),strong
+            1.虽然行内元素设置行高之后会有位置的变化，但是并没有改变盒子的大小 (盒子为本控件的大小，有时浏览器会默认改变元素属性)
+            2.有些行内元素可以设置宽高，是因为他们是置换元素(拥有内置宽高也可以设置宽高属性)
+            置换元素有：input select textarea button label
+
+            块元素: 在垂直方向上排列，独占一行，自动换行
+            div,dl,dd,dt,form,h1-h6,hr,ol,p,ul,table,pre,menu,hr
+
+            行内块元素: 拥有块级元素和行内元素的性质，既可以在一行排列，也可以设置宽高等属性，不自动换行
+            */
+
+            /* 元素应该生成框的类型 
+            none: 此元素不会被显示
+            block: 此元素将显示为块级元素，此元素前后会带有换行符
+            inline: 此元素会被显示为内联元素，元素前后没有换行符
+            inline-block: 行内块元素
+            list-item: 此元素会被作为列表显示
+            run-in: 此元素会根据上下文作为块级元素或内联元素显示
+            table: 作为块级表格来显示类似<table>，表前后带有换行符
+            inline-table: 作为内联表格来显示(类似<table>)，前后不带换行符
+            table-row-group: 作为一个或者多个行的分组来显示(类似<tbody>)
+            table-header-group: 作为一个或者多个行的分组来显示(类似<thead>)
+            table-footer-group: 作为一个或者多个行的分组来显示(类似<tfoot>)
+            table-row: 作为一个表格行来显示(类似<tr>)
+            table-column-group: 作为一个或多个列的分组来显示<colgroup>
+            table-column: 作为一个单元格列来显示
+            table-cell: 作为一个表格单元格显示(类似<td>或<th>)
+            table-caption: 作为一个表格标题来显示(类似<caption>)
+            */
+            /* display: block; */
 
             /* clear规定属性的那一侧不允许出现浮动元素
             left 在左侧不允许出现浮动元素
             right 在右侧不允许出现浮动元素
             both 在左右两侧均不允许浮动元素
             */
-            clear: both;
+            /* clear: both; */
 
             /* 指定一个绝对定位的元素，该元素被裁剪并显示  如果现有overflow:visible 则clip不生效 */
-            clip: rect(10px, 20px, 30px, 40px);
+            /* clip: rect(10px, 20px, 30px, 40px); */
 
             /* 规定光标显示的类型 
             default 默认光标  通常为一个箭头
@@ -58,13 +100,47 @@
             wait	此光标指示程序正忙（通常是一只表或沙漏）。
             help	此光标指示可用的帮助（通常是一个问号或一个气球）
             */
-            cursor: move;
+            /* cursor: move; */
 
-            /* 定义属性元素往哪个方向浮动 */
-            float: left;
             /* top: 50%;
     left: 50%;
     transform: translate(-50%,-50%); */
+        }
+
+        .topLeft {
+            /* position: absolute; */
+
+            /* 把图像的左边缘设置在其包含元素左边缘向右100元素的位置 */
+            top: 10px;
+            left: 10px;
+            border: 1px solid red;
+            margin: 0px 0px;
+
+            /* 当内容溢出元素框的时候发生的事情 
+            visible: 内容不会被修剪，会呈现在元素框之外
+            hidden: 内容会被修剪，并且其余内容是不可见的
+            sroll: 内容会被修剪，但浏览器会显示滚动条以便查看其余内容
+            auto: 如果内容被修剪。浏览器会显示滚动条以便查看其余内容 
+            */
+            overflow: visible;
+
+            display: inline-block;
+            /* 规定元素的定位类型
+            relative: 生成相对定位的元素，相对于其正常位置进行定位
+            absolute: 生成决定定位的元素，相对于static定位之外的第一个父元素进行定位
+            fixex : 生成决定定位的元素，相对于浏览器窗口进行定位
+            static: 默认值，没有定位。元素出现在正常的流中，
+            */
+            /* position:relative; */
+            height: 100px;
+        }
+
+        .span {
+
+            /* 设置元素的垂直对齐方式 
+            
+            */
+            vertical-align: bottom;
         }
     </style>
 
@@ -74,8 +150,16 @@
 <body>
 
     <div class="tatisa" onclick="tapClick()">
-        <img class="webKit"></img>
-        <img class="webKit"></img>
+        <!-- <a class="webKit">webKit -1</a>
+        <a class="webKit">webKit -2</a> -->
+
+        <!-- <button class="webKit">webKit -1</button>
+        <button class="webKit">webKit -2</button> -->
+
+        <!-- <div style="border: 1px solid red">换行内容</div> -->
+
+        <p class="topLeft">webKit <span style="border: 1px solid seagreen">我的天</span> -1</p>
+        <!-- <p class="topLeft">webKit -2</p> -->
     </div>
 </body>
 

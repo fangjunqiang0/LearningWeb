@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>media</title>
+
+    <style>
+        .back {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        @media screen and (min-width: 300px) and (max-width: 500px) {
+            .back {
+                background-color: blue;
+            }
+        }
+        /* screen 媒体类型 用于电脑屏幕，平板电脑，只能手机等 */
+        /* media参数
+        width: 浏览器可视宽度
+        height： 浏览器可视高度
+        device-width: 设备屏幕的宽度
+        device-height: 设备屏幕的高度
+        orientation: 检测设备目前处于横向还是纵向 (landscape 横屏 portrait 竖屏)
+        aspect-ratio: 检测浏览器可视宽度和高度的比例。(例如aspect-ratio: 16/9)
+        color: 检测颜色的位数 (min-color: 32 就会检测设备是否拥有32位颜色)
+        color-index: 检测设备颜色索引表中的颜色，他的值不能是负数
+        monochrome: 检测单色帧缓冲区域中的每个像素的位数
+        resolution: 检测屏幕的分辨率 (min-resolution: 300dpi / 300dpcm)
+        grid: 检测输出设备是网格还是位图设备
+         */
+        @media screen and (min-width: 800px) and (max-width: 1000px) {
+            .back {
+                background-color: orange;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="back"></div>
+
+</body>
+
+</html>

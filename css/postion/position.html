@@ -7,6 +7,7 @@
     <title>position</title>
 
     <script src="./position.js"></script>
+    <link rel="stylesheet" href="position.css">
 
     <style>
         .tatisa {
@@ -18,6 +19,12 @@
             /* line-height: 200px; */
             /* text-align: center; */
             border: 1px solid fuchsia;
+        }
+
+        @media screen and (min-width:960px) and (max-width:1200px) {
+            .tatisa {
+                background: yellow;
+            }
         }
 
         .webKit {
@@ -141,6 +148,28 @@
             
             */
             vertical-align: bottom;
+
+            /* 规定元素是否可见  与hidden有什么区别？
+            visible: 元素时可见的 
+            hidden: 元素时不可见的 
+            collapse: 当表格元素使用时，此值可删除一行或一列。但是它不会影响表格的布局。被行或列占据的空间或留个其他内容使用。如果此值用在其他元素上，同hidden
+
+            visible: hiddne 和 display: none 的区别：
+            visible: hidden - 可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏前一样的空间，该元素虽然被隐藏了，但仍然会影响布局
+            display: none - 可以隐藏某个元素， 且隐藏的元素不会占用空间。元素不淡被隐藏了，且该元素占用的空间也会从页面布局中消失。
+            */
+            /* visibility: hidden; */
+
+            /* display: none; */
+
+            /* 设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素前面
+            元素可拥有负值
+            仅在定位属性下可以使用；如： position: absolute;
+            auto: 堆叠顺序与父元素相等 
+
+            number: 数值 
+            */
+            z-index: auto;
         }
     </style>
 
@@ -158,7 +187,7 @@
 
         <!-- <div style="border: 1px solid red">换行内容</div> -->
 
-        <p class="topLeft">webKit <span style="border: 1px solid seagreen">我的天</span> -1</p>
+        <p class="topLeft">webKit <span class="span" style="border: 1px solid seagreen">我的天</span> -1</p>
         <!-- <p class="topLeft">webKit -2</p> -->
     </div>
 </body>

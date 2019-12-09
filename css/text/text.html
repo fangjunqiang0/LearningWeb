@@ -66,6 +66,32 @@
             */
 
             text-transform: uppercase;
+
+            /* unicode-bidi 设置文本方向 */
+
+            /* 规定如何处理元素中的空白
+            pre: 空白会被浏览器保留
+            nowap: 文本不会换行，文本会在同一行上继续，直到遇到<br>标签为止
+            pre-wrap: 保留空白符序列，但是正常的进行换行
+            pre-line: 合并空白符序列，但是保留换行符
+            */
+            white-space: pre;
+
+            /* 设置单词之间的间距 */
+            word-spacing: 25px;
+
+            /* punctuation 都不支持 */
+
+            /* 规定当文本溢出包含元素时：
+            clip 修剪文本
+            ellipsls 显示省略号来代表被修剪的文本
+             */
+            text-overflow: clip;
+
+            /* text-shadow: h-shadow v-shadow blur color;
+            
+             */
+            text-shadow: 5px 5px 5px #FF0000;
         }
     </style>
 </head>

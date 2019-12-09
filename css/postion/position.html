@@ -1,5 +1,7 @@
 <html lang="en">
 
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +12,50 @@
     <link rel="stylesheet" href="position.css">
 
     <style>
+        /*  行内元素：再水平方向上排列，宽度岁内容的宽度而定。不可以设置宽高，可以设置行高。设置margin和padding的上下无用。
+            常见的内联元素有:a,b,br,em,font,i,img,input,label,select,small,span,strike(中划线),strong
+            1.虽然行内元素设置行高之后会有位置的变化，但是并没有改变盒子的大小 (盒子为本控件的大小，有时浏览器会默认改变元素属性)
+            2.有些行内元素可以设置宽高，是因为他们是置换元素(拥有内置宽高也可以设置宽高属性)
+            置换元素有：input select textarea button label
+
+
+            块元素: 在垂直方向上排列，独占一行，自动换行
+            div,dl,dd,dt,form,h1-h6,hr,ol,p,ul,table,pre,menu,hr、
+
+            
+            行内块元素: 拥有块级元素和行内元素的性质，既可以在一行排列，也可以设置宽高等属性，不自动换行
+
+            
+            边界重叠： 是指两个或多个盒子(可能相邻也可能嵌套)的相邻边界(其间没有任何非空内容、补白、边框)重合在一起而行成一个单一边界。
+            两个或多个块级盒子的垂直相邻边界会重合。结果的边界宽度是相邻边界宽度中的最大值。如果出现负边界，则在最大的正边界中减去绝对值最大的负边界。如果
+            没有正边界，则从0中减去绝对值最大的负边界。注意：相邻盒子可能并非是由父子关系或同胞关系的元素生成。
+            
+            边界重叠的意外情况：
+            1.水平边距永远不会重合
+            2.在规范文档中，两个或两个以上的块级盒模型的相邻的垂直margin会重叠，计算方式如下：
+            a. 全部都为正直，则取大值。
+            b.不全是正直，则都去绝对值，然后用正直减去最大值
+            c.没有正直则都取绝对值，然后用0减去最大值。
+            注意: 相邻的盒模型，可能由DOM元素动态产生，并没有相邻或继承关系
+
+            3. 相邻的盒模型，如果其中的一个是浮动的，垂直margin不会重叠，并且浮动的盒模型和他的子元素之间也是这样。
+            4.设置overflow属性的元素和他的子元素之间的margin不会重叠。overflow: vsisble 除外
+            5.设置了绝对定位的盒模型(position: absolute)，垂直margin不会重叠，并且和他们子元素之间也是一样。
+            6.设置display: inline-block 元素的垂直maigin不会重叠，并且他们子元素之间也是一样。
+            7.如果一个盒模型的上下margin相邻，这是他的margin可能重叠覆盖它，元素的位置去绝对，它的相邻元素的margin是否重叠。
+            a.元素的margin和它父元素的margin-top 重叠在一起，盒模型border-top的边界定义和它的父元素相同
+            b.任意元素的父元素不参与margin的重叠(父元素的margin-top高度)，只有父元素的margin-bottom参与计算，如果元素的border-top非零。那么元素的border-top边界位置和原来一样
+            8. 根元素的垂直margin不会被重叠
+
+            消除重叠：
+            1.外元素用padding代替
+            2.外层元素：overflow: hidden
+            4.内层元素绝对定位：position: absolute
+            5.内层元素 float: left; display: inline-block
+            6.内层元素padding: 1px (父元素？？？)
+            7.内层元素透明边框：border: 1px solid transparent
+            */
+
         .tatisa {
             position: relative;
             margin: 300px auto;
@@ -46,18 +92,6 @@
             right: 元素向右浮动 
              */
             /* float: left; */
-
-            /* 行内元素：再水平方向上排列，宽度岁内容的宽度而定。不可以设置宽高，可以设置行高。设置margin和padding的上下无用。
-            常见的内联元素有:a,b,br,em,font,i,img,input,label,select,small,span,strike(中划线),strong
-            1.虽然行内元素设置行高之后会有位置的变化，但是并没有改变盒子的大小 (盒子为本控件的大小，有时浏览器会默认改变元素属性)
-            2.有些行内元素可以设置宽高，是因为他们是置换元素(拥有内置宽高也可以设置宽高属性)
-            置换元素有：input select textarea button label
-
-            块元素: 在垂直方向上排列，独占一行，自动换行
-            div,dl,dd,dt,form,h1-h6,hr,ol,p,ul,table,pre,menu,hr
-
-            行内块元素: 拥有块级元素和行内元素的性质，既可以在一行排列，也可以设置宽高等属性，不自动换行
-            */
 
             /* 元素应该生成框的类型 
             none: 此元素不会被显示

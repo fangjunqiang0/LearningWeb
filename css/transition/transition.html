@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transition</title>
+
+    <style>
+        .transitionDiv {
+
+            position: relative;
+            margin: 200px auto;
+            width: 200px;
+            height: 100px;
+            background-color: purple;
+
+
+            -webkit-transition: width 2s;
+            /* Safari 和 Chrome */
+
+        }
+
+        .transitionDiv:hover {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="transitionDiv"></div>
+</body>
+
+</html>

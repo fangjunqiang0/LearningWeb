@@ -1,0 +1,112 @@
+
+/* 
+
+.class 选取带有指定类的元素
+p.hometown{} 为class="hometown"的所有<p>元素设置样式
+
+#id  为带有指定id的元素设置样式
+#firstname
+为id="firstname"的元素设置样式
+
+* 选择器选取所有元素
+div *   .name * 选择器选择其元素中的所有元素
+
+element 用于指定元素名称的所有元素  p {} 选择并设置所有<p>元素的样式
+
+element,element 选择器用于同时选取多个元素。如需为不同的元素设置相同的样式，请用都逗号分隔每个元素 例如: h1,p {}
+
+element element 选择器用于选择元素内部的元素。 div p {} 选择并设置位于<div>元素内部的每个<p>元素的样式
+
+element>element 选择器用于选取带有特定父元素的元素。如果元素不是父元素的直接子元素，则不会被选择。 div>p{}选取父元素是<div>元素的每个<p>元素
+
+element+element 选择器用于选取第一个指定元素之后(不是内部)紧跟的元素。div+p{} 选择<div>元素之后紧跟的<p>元素。
+
+[attribute] 选择器用于选取带有指定属性的元素。 a[target]{}  选择带有target属性的<a>元素设置样式
+
+[attribute=value] 选择器用于选取带有指定属性和值的元素。 a[target=_blank]{} 为target="_blank"的<a>元素设置样式。
+
+[attribute~=value] 选择器用于选取属性值中包含指定词汇的元素。 [title~=flower] 选择title属性包含单词"flower"的元素。
+  
+[attribute|=value] 选择器用于选取带有指定开头的属性值的元素。该值必须是整个单词，比如lang="en",或者后面跟着连字符，比如lang="en-us".
+[lang|=en] 选择lang属性值以"en"开头的元素。
+
+:link 选择器用于选取未被访问的链接。:link 选择器不会设置已经访问过的链接的样式。
+:visited 选择器对指向已访问页面的链接设置样式
+:hover 选择器用于设置鼠标指针浮动到连接上时的样式。
+:active 选择器用于设置点击链接时的样式
+
+:focus 选择器用于选取获得焦点的元素。 提示：接受键盘事件或其他用户输入的元素都允许:focue选择器。input:focus{} 选择获取焦点的输入字段
+
+:first-letter 选择器用于选取指定选择器的首字母 
+字体属性、颜色属性、背景属性、外边距属性、内边距属性、边框属性、text-decoration、vertical-align（只有在 float 为 'none' 时）
+text-transform、line-height、float、clear 都可以用:first-letter设置
+
+:first-line 选择器用于选取指定选择器的首行。
+
+:first-child 选择器用于选取属于其父元素的首个子元素的指定选择器。p:first-child i{} 选择每个<p>中的每个<i>元素并设置其样式。
+其中<p>元素是其父元素的第一个元素 ----->  设置<p>元素的父元素中的第一个<p>元素中的<i>元素
+
+:before 选择器在被选元素的内容前面插入内容 请使用content属性来指定要插入的内容
+p:before{content:台词;background-color:yellow;color:red;font-weight:bold;} 在<p>元素前面插入内容，并设置插入内容的样式
+
+:after 选择器在被选元素的内容后面插入内容。 请使用content属性来指定要插入的内容
+p:after{content:台词;background-color:yellow;color:red;font-weight:bold;} 在<p>元素后面插入内容，并设置插入内容的样式
+
+:lang  选择器用于选取带有以指定值开头的lang属性的元素。该值必须是整个单词，比如lang="en",或者后面跟着连字符，比如lang="en-us".
+[lang|=en] 选择lang属性值以"en"开头的元素。
+
+element1-element2 选择器element1之后出现的所有element2元素。 两种元素必须拥有相同的父元素，但是element2不必直接紧随element1 
+
+[attribute^=value] 选择器匹配属性值以指定开头的每个元素。div[class^="test"]{} 设置div属性值以"test"开头的所有元素
+
+[attribute$=value] 选择器匹配属性值以指定值结尾的每个元素  div[class$="test"]{} 设置div属性值以"test"结尾的所有元素
+
+[attribute*="test"] 选择器匹配属性值包含指定值的每个元素。 div[class$="test"]{} 设置div属性值包含"test"的所有元素
+
+:first-of-type 选择器匹配其父元素的特定类型的首个子元素的每个元素.等同于:nth-of-type(1)。
+
+:last-of-type 选择器匹配属于父元素的特定类型的最后一个子元素的每个元素。 等同于:nth-last-of=type(1).
+
+:only-of-type 选择器匹配属于其父元素的特定类型的唯一子元素的每个元素。(父元素中只有一个特定类型的子元素时才会生效)
+
+:only-child 选择器匹配属于其父元素的唯一子元素的每个元素。(父元素中只有一个元素的时候才会生效)
+
+:nth-child(n) 选择器匹配属于其父元素的第N个子元素，不论元素的类型.n可以是数字，关键字或公式。
+p:nth-child(2) 选择属于其父元素的第二个子元素的每个 <p> 元素。	
+
+:nth-last-child() 选择器匹配属于其元素的第N个子元素的每个元素，不论元素类型，从最后一个子元素开始计数。n可以是数字，关键词或公式
+p:nth-last-of-type(2) 同上，但是从最后一个子元素开始计数。	
+
+:last-child 选择器匹配属于其父元素的最后一个子元素的每个元素。 p:last-child 等同于p:bth-last-of-type(1)
+
+:root 选择匹配文档根元素 在HTML中，根元素始终是html元素
+
+:empty 选择匹配没有子元素(包括文本节点)的每个元素。
+
+:target 选择器可选取当前活动的目标元素。 URL带有后面跟有锚名称#，指向文档内某个具体元素。这个被链接的元素就是目标元素
+
+:enabled 选择匹配每个已启用的元素(大多用在表单元素上)。
+input[type="text"]:enabled {} 为所有type="text"的已启用的input元素设置背景色。
+
+:disabled 选择匹配每个被禁用的元素。（大多用在表单元素上）
+input[type="text"]:disabled {} 为所有type="text"的被禁用的input元素设置背景色。
+
+:not(selector) 选择器匹配非指定元素/选择器的每个元素
+:not(p){} 设置非<p>元素的所有元素的背景色
+
+::selection 选择器匹配被用户选取的选取部分。只能添加应用少量的CSS属性：color background cursor outline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

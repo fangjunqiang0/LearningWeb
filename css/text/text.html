@@ -51,10 +51,10 @@
             line-throuh： 定义穿过文本的一条线
             blink: 定义闪烁的文本
             */
-            text-decoration: overline;
+            /* text-decoration: overline; */
 
             /* 规定文本块的首行缩进 */
-            text-indent: 50px;
+            /* text-indent: 50px; */
 
 
             /* text-shadow	文本的阴影效果 */
@@ -65,17 +65,11 @@
             lowercase: 仅有小写字母 
             */
 
-            text-transform: uppercase;
+            /* text-transform: uppercase; */
 
             /* unicode-bidi 设置文本方向 */
 
-            /* 规定如何处理元素中的空白
-            pre: 空白会被浏览器保留
-            nowap: 文本不会换行，文本会在同一行上继续，直到遇到<br>标签为止
-            pre-wrap: 保留空白符序列，但是正常的进行换行
-            pre-line: 合并空白符序列，但是保留换行符
-            */
-            white-space: pre;
+
 
             /* 设置单词之间的间距 */
             word-spacing: 25px;
@@ -84,14 +78,26 @@
 
             /* 规定当文本溢出包含元素时：
             clip 修剪文本
-            ellipsls 显示省略号来代表被修剪的文本
+            ellipsis 显示省略号来代表被修剪的文本
              */
-            text-overflow: clip;
+            text-overflow: ellipsis;
+            /* 规定如何处理元素中的空白
+            pre: 空白会被浏览器保留
+            nowrap: 文本不会换行，文本会在同一行上继续，直到遇到<br>标签为止
+            pre-wrap: 保留空白符序列，但是正常的进行换行
+            pre-line: 合并空白符序列，但是保留换行符
+            */
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+
+            width: 200px;
 
             /* text-shadow: h-shadow v-shadow blur color;
             
              */
-            text-shadow: 5px 5px 5px #FF0000;
+            /* text-shadow: 5px 5px 5px #FF0000; */
         }
     </style>
 </head>
@@ -99,7 +105,13 @@
 <body>
     <div>
 
-        <p>这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多</p>
+        <p>这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多
+            这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多
+            这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多
+            这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多
+            这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多
+            这就是一个字体呀的撒撒大所多奥术大师dsadsa大所多奥术大师d'sa'da阿斯达爱上阿斯达爱上阿萨斯多
+        </p>
 
     </div>
 </body>
